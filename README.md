@@ -1,2 +1,4 @@
-# javaScript_Project
-Implemented and practice new javaScript tasks
+# javaScript_Projects
+Implemented and practiced javaScript projects
+
+Implemented basic to advanced function of Javascript in different projects
