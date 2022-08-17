@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Calculator</title>
+
+
+    <style>
+        .content {
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
+
+        input,
+        button {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 40%;
+        }
+    </style>
+    <script>
+
+        function love() {
+            let txt1 = document.getElementById("txt1").value;
+            let txt2 = document.getElementById("txt2").value;
+
+            if (txt1 && txt2) {
+                let total = Math.floor(Math.random() * 100)
+                str = (txt1 + txt2).replace(/\s/g, "");
+                str = str.toLowerCase();
+
+                if (localStorage.getItem(str)) {
+                    total = localStorage.getItem(str);
+                }
+                else {
+                    localStorage.setItem(str, total);
+
+                }
+                document.getElementById("result").innerText = total;
+            }
+            else {
+
+                alert("Please enter valid Names")
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="content">
+        <img src="./Image.jpg" style="width:300px" alt="">
+        <h1 id="result">Calculat Your bond with your friend</h1>
+        <br><br>
+        <input type=" text" id="txt1" placeholder="Enter your Name">
+        <input type="text" id="txt2" placeholder="Enter your Name">
+        <button onclick="love()">Calculate</button>
+    </div>
+
+</body>
+
+</html>
